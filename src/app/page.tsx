@@ -9,9 +9,9 @@ const Home = () => {
     console.log(theme);
   };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 space-y-6">
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 space-y-6 bg-background text-foreground">
       <div className="space-x-2">
-        <Button variant={"default"} onClick={handleCLick}>
+        <Button variant={"default"} onClick={handleCLick} >
           Click Me
         </Button>
         <Button variant={"pramary"}>Submit</Button>
