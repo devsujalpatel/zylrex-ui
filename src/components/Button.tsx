@@ -1,15 +1,16 @@
 import { mergeProps, useRender } from "@base-ui-components/react";
 import { cva, type VariantProps } from "class-variance-authority";
+import { twMerge } from "tailwind-merge";
 
 const buttonVariants = cva(
-  "inline-flex justify-center items-center px-4 py-2 rounded-xl cursor-pointer border-2 inset-shadow-sm hover:inset-shadow-xs",
+  "inline-flex justify-center items-center cursor-pointer hover:opacity-90 focus-visible:ring-foreground focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none rounded-xl",
   {
     variants: {
       variant: {
-        default: "bg-neutral-800 text-white border-neutral-700",
-        destructive: "bg-red-600 text-white border-red-500",
-        warning: "bg-yellow-500 border-yellow-400 text-white",
-        outline: "border border-neutral-600 text-neutral-800 bg-transparent",
+        default: "",
+        pramary: "bg-blue-400",
+        warning: "bg-yellow-400",
+        destructive: "bg-red-400",
       },
       size: {
         default: "h-12 px-4",
@@ -29,7 +30,10 @@ interface ButtonProps
 
 export default function Button(props: ButtonProps) {
   const mergedProps = mergeProps(props, {
-    className: buttonVariants({ variant: props.variant, size: props.size }),
+    className: twMerge(
+      buttonVariants({ variant: props.variant, size: props.size }),
+      props.className
+    ),
   });
 
   const { render } = props;
