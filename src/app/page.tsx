@@ -1,4 +1,12 @@
 import Button from "@/components/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/card";
 
 const Home = () => {
   return (
@@ -8,6 +16,26 @@ const Home = () => {
         <Button variant={"pramary"}>Submit</Button>
         <Button variant={"destructive"}>Cancel</Button>
         <Button variant={"warning"}>Warning</Button>
+      </div>
+      <div className="w-full m-6 max-w-md">
+        <Card variant={"raised"}>
+          <CardHeader>
+            <CardTitle>This is my title</CardTitle>
+            <CardDescription>
+              This is a description for my card component.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul>
+              <li>This is one benefit</li>
+              <li>This is another benefit</li>
+              <li>This is yet another benefit</li>
+            </ul>
+          </CardContent>
+          <CardFooter>
+            <Button variant="pramary">Get Started</Button>
+          </CardFooter>
+        </Card>
       </div>
     </main>
   );

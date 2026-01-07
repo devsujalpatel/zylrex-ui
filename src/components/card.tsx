@@ -1,0 +1,139 @@
+import { mergeProps, useRender } from "@base-ui-components/react";
+import { cva, type VariantProps } from "class-variance-authority";
+
+const cardVariants = cva("rounded-2xl border-3 border-border", {
+  variants: {
+    variant: {
+      raised: "shadow-raised",
+      inset: "shadow-inset",
+    },
+  },
+  defaultVariants: {
+    variant: "raised",
+  },
+});
+
+interface CardProps
+  extends useRender.ComponentProps<"div">,
+    VariantProps<typeof cardVariants> {}
+
+export const Card = (props: CardProps) => {
+  const merged = mergeProps(props, {
+    className: cardVariants({
+      variant: props.variant,
+    }),
+  });
+
+  const element = useRender({
+    defaultTagName: "div",
+    render: props.render,
+    props: merged,
+  });
+
+  return element;
+};
+
+// Card Header
+const cardHeaderVariants = cva("flex flex-col space-y-1.5 p-6");
+
+interface CardHeaderProps
+  extends useRender.ComponentProps<"div">,
+    VariantProps<typeof cardHeaderVariants> {}
+
+export const CardHeader = (props: CardHeaderProps) => {
+  const merged = mergeProps(props, {
+    className: cardHeaderVariants(),
+  });
+
+  const element = useRender({
+    defaultTagName: "div",
+    render: props.render,
+    props: merged,
+  });
+
+  return element;
+};
+
+// Card Title
+const cardTitleVariants = cva("font-semibold leading-none tracking-tight");
+
+interface CardTitleProps
+  extends useRender.ComponentProps<"div">,
+    VariantProps<typeof cardTitleVariants> {}
+
+export const CardTitle = (props: CardTitleProps) => {
+  const merged = mergeProps(props, {
+    className: cardTitleVariants(),
+  });
+
+  const element = useRender({
+    defaultTagName: "div",
+    render: props.render,
+    props: merged,
+  });
+
+  return element;
+};
+
+// Card Description
+const cardDescriptionVariants = cva("text-sm text-muted-foreground");
+
+interface CardDescriptionProps
+  extends useRender.ComponentProps<"div">,
+    VariantProps<typeof cardDescriptionVariants> {}
+
+export const CardDescription = (props: CardDescriptionProps) => {
+  const merged = mergeProps(props, {
+    className: cardDescriptionVariants(),
+  });
+
+  const element = useRender({
+    defaultTagName: "div",
+    render: props.render,
+    props: merged,
+  });
+
+  return element;
+};
+
+// Card Content
+const cardContentVariants = cva("p-6 pt-0");
+
+interface CardContentProps
+  extends useRender.ComponentProps<"div">,
+    VariantProps<typeof cardContentVariants> {}
+
+export const CardContent = (props: CardContentProps) => {
+  const merged = mergeProps(props, {
+    className: cardContentVariants(),
+  });
+
+  const element = useRender({
+    defaultTagName: "div",
+    render: props.render,
+    props: merged,
+  });
+
+  return element;
+};
+
+// Card Footer
+const cardFooterVariants = cva("p-6 pt-0");
+
+interface CardFooterProps
+  extends useRender.ComponentProps<"div">,
+    VariantProps<typeof cardFooterVariants> {}
+
+export const CardFooter = (props: CardFooterProps) => {
+  const merged = mergeProps(props, {
+    className: cardFooterVariants(),
+  });
+
+  const element = useRender({
+    defaultTagName: "div",
+    render: props.render,
+    props: merged,
+  });
+
+  return element;
+};
