@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/card";
+import { NeuSwitch } from "@/components/switch";
 
 const Home = () => {
   return (
@@ -33,7 +34,7 @@ const Home = () => {
             </ul>
           </CardContent>
           <CardFooter>
-            <Button variant="pramary">Get Started</Button>
+            <NeuSwitch />
           </CardFooter>
         </Card>
       </div>
