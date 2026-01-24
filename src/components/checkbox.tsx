@@ -5,10 +5,10 @@ import { cva } from "class-variance-authority";
 import { CheckIcon } from "lucide-react";
 
 const checkboxVariants = cva(
-  "h-5 w-5 shrink-0 rounded-sm inline-block border border-highlight bg-background shadow-inset focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 data-checked:bg-linear-tl data-checked:from-primary/5 data-checked:to-primary/25 data-checked:shadow-raised",
+  "h-5 w-5 shrink-0 rounded-sm relative inline-block border border-highlight bg-background shadow-inset focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 data-checked:bg-linear-to-tl duration-250 transition-all ease-out data-checked:from-primary/5 data-checked:to-primary/25 data-checked:shadow-raised data-checked:border-primary/50 cursor-pointer data-disabled:cursor-not-allowed data-disabled:opacity-50",
 );
 
-const checkIndicatorVariants = cva("flex items-center justify-center w-full h-full");
+const checkIndicatorVariants = cva("flex items-center justify-center absolute top-1/2 left-1/2 -translate-1/2 ");
 
 interface CheckboxProps extends React.ComponentProps<typeof Checkbox.Root> {}
 

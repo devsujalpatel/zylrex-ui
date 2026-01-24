@@ -36,7 +36,7 @@ const Home = () => {
           </CardContent>
           <CardFooter>
             <NeuSwitch />
-            <NeuCheckbox />
+            <NeuCheckbox  disabled />
           </CardFooter>
         </Card>
       </div>
