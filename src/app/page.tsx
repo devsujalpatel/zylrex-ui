@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/card";
+import { NeuCheckbox } from "@/components/checkbox";
 import { NeuSwitch } from "@/components/switch";
 
 const Home = () => {
@@ -35,6 +36,7 @@ const Home = () => {
           </CardContent>
           <CardFooter>
             <NeuSwitch />
+            <NeuCheckbox />
           </CardFooter>
         </Card>
       </div>
